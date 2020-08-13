@@ -4,7 +4,8 @@
   "description": "Allows a client to manage a list of expenses",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon --inspect=0.0.0.0 ."
+    "dev": "nodemon --inspect=0.0.0.0 .",
+    "lint": "eslint ."
   },
   "keywords": [
     "expenses"
@@ -15,6 +16,12 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "@davidgarvie/eslint-config": "^1.3.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5"
   }
 }
