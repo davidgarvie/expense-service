@@ -1,0 +1,17 @@
+{
+  "name": "expense-service",
+  "version": "1.0.0",
+  "description": "Allows a client to manage a list of expenses",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "expenses"
+  ],
+  "author": "David Garvie",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
