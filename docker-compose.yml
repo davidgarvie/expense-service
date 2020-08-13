@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  api:
+    build: .
+    container_name: expenses-service
+    ports:
+      - 8080:8080
+      - 9229:9229
+    volumes:
+      - .:/usr/src/app
+    command: npm run dev
