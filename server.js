@@ -1,6 +1,7 @@
 const express = require("express");
 const pino = require("pino-http");
 const { logger } = require("./src/helpers");
+const { PORT } = require("./src/config");
 const app = express();
 
 app.use(
@@ -9,8 +10,8 @@ app.use(
   })
 );
 
-app.use("/", (req, res) => res.send("hello"));
+app.use("/ping", (req, res) => res.send("pong"));
 
-app.listen("8080", () => {
-  logger.info("App running on 8080");
+app.listen(PORT, () => {
+  logger.info(`App running on ${PORT}`);
 });
