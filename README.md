@@ -6,32 +6,11 @@ Allows a client to manage a list of expenses
 
 ## Running the app
 
-### With node
+Note, the app depends on a mongo database being available. To get started, copy the template from `.env.example` into a file named `.env` and update with the appropriate values.
 
-```sh
-node ci --only=prod
-npm run start
-```
+### Local development
 
-### With Docker
-
-```sh
-docker build -t expenses-service . && docker run --rm -p 8080:8080 expenses-service
-```
-
-## Local development
-
-### With Node
-
-```sh
-npm install
-npm run dev
-```
-
-### With Docker 
-
-The application depends on a database so the easiest solution is to run with docker compose. This will run the app and watch for changes in the
- background. 
+The easiest way to get the app running is with docker compose. This will run a mongo database service and restart the application when it detects any changes in any of the source files. 
 
 ```sh
 docker-compose up --build
