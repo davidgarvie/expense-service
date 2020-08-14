@@ -1,7 +1,7 @@
-const { isProduction } = require('../config');
+const { isProduction } = require("../config");
 
-const logger = require('pino')({
+const logger = require("pino")({
   prettyPrint: !isProduction,
-})
+});
 
 module.exports = logger;
