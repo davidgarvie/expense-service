@@ -3,6 +3,9 @@ const pino = require("pino-http");
 const { logger } = require("./src/helpers");
 const { PORT } = require("./src/config");
 const app = express();
+const { createDBConnection } = require("./src/db");
+
+createDBConnection();
 
 app.use(
   pino({
