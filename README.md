@@ -1,5 +1,7 @@
 # Expense Service
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 Allows a client to manage a list of expenses
 
 ## Running the app
