@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon --inspect=0.0.0.0 .",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "start": "node ."
   },
   "keywords": [
     "expenses"
