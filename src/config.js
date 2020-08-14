@@ -1,4 +1,19 @@
+const {
+  MONGO_USERNAME,
+  MONGO_PASSWORD,
+  MONGO_HOSTNAME,
+  MONGO_PORT,
+  MONGO_DB,
+  NODE_ENV,
+  PORT,
+} = process.env;
+
 module.exports = {
-  isProduction: process.env.NODE_ENV === "production",
-  PORT: process.env.PORT || 8080,
+  isProduction: NODE_ENV === "production",
+  MONGO_USERNAME,
+  MONGO_PASSWORD,
+  MONGO_HOSTNAME,
+  MONGO_PORT,
+  MONGO_DB,
+  PORT: PORT || 8080,
 };
