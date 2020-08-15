@@ -1,8 +1,14 @@
 const { model, Schema } = require("mongoose");
 
 const expenseSchema = new Schema({
-  amount: Number,
-  date: Date,
+  amount: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: Date,
+    required: true,
+  },
 });
 
 const Expense = model("Expense", expenseSchema);
