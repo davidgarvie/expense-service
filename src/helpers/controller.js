@@ -1,7 +1,7 @@
 function controllerHelper(controller) {
   return async function (req, res, next) {
     try {
-      const [code, result] = await controller();
+      const [code, result] = await controller(req.body);
       if (code) {
         res.statusCode = code;
       }
