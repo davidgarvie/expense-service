@@ -18,6 +18,7 @@
   "author": "David Garvie",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.29",
     "pino": "^6.5.1",
