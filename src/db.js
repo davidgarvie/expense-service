@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const {
+  isProduction,
   MONGO_USERNAME,
   MONGO_PASSWORD,
   MONGO_HOSTNAME,
@@ -8,7 +9,9 @@ const {
 } = require("./config");
 const { logger } = require("./helpers");
 
-const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}?authSource=admin`;
+const authSource = isProduction ? "user" : "admin";
+
+const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}?authSource=${authSource}`;
 
 const options = {
   useNewUrlParser: true,
@@ -17,15 +20,13 @@ const options = {
   connectTimeoutMS: 10000,
 };
 
-function createDBConnection() {
-  mongoose
-    .connect(url, options)
-    .then(() => {
-      logger.info("Succesfully connected to MongoDB");
-    })
-    .catch((err) => {
-      logger.warn("Unable to connect to MongoDB", err);
-    });
+async function createDBConnection() {
+  try {
+    await mongoose.connect(url, options);
+    logger.info("Succesfully connected to MongoDB");
+  } catch (err) {
+    logger.warn("Unable to connect to MongoDB", err);
+  }
 }
 
 exports.createDBConnection = createDBConnection;
