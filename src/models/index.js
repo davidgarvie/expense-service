@@ -1,3 +1,1 @@
-const Expense = require("./expense");
-
-exports.Expense = Expense;
+exports.Expense = require("./expense");

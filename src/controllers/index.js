@@ -1,3 +1,1 @@
-const getExpenses = require("./getExpenses");
-
-exports.getExpenses = getExpenses;
+exports.getExpenses = require("./getExpenses");
