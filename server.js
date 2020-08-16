@@ -16,6 +16,13 @@ app.use(
 );
 app.use(bodyParser.json());
 
+app.use((req, res, next) => {
+  if (!req.locals) {
+    req.locals = {};
+  }
+  next();
+});
+
 app.use(router);
 
 app.use(errorHandler);

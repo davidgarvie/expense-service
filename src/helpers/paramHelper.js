@@ -5,9 +5,6 @@ function paramHelper(controller) {
     try {
       const model = await controller(id);
       if (model) {
-        if (!req.locals) {
-          req.locals = {};
-        }
         req.locals.model = model;
         next();
       } else {
