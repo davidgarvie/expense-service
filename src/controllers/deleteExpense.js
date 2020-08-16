@@ -1,6 +1,6 @@
-async function createExpense(body, expense) {
+async function createExpense(data, expense) {
   await expense.delete();
-  return [204, expense];
+  return [200, expense];
 }
 
 module.exports = createExpense;
