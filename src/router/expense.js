@@ -4,6 +4,7 @@ const {
   deleteExpense,
   getExpense,
   getExpenses,
+  updateExpense,
 } = require("../controllers");
 const { controllerHelper, paramHelper } = require("../helpers");
 
@@ -15,5 +16,6 @@ router.get("/", controllerHelper(getExpenses));
 router.post("/", controllerHelper(createExpense));
 router.get("/:id", (req, res) => res.send(req.locals.model));
 router.delete("/:id", controllerHelper(deleteExpense));
+router.put("/:id", controllerHelper(updateExpense));
 
 exports.expenseRouter = router;
