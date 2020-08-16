@@ -8,7 +8,12 @@ function errorHandler(err, req, res, next) {
   if (err instanceof Mongoose.Error.ValidationError) {
     return res.sendStatus(400);
   }
-  return res.status(500);
+  switch (err.status) {
+    case 404:
+      return res.sendStatus(404);
+    default:
+      return res.sendStatus(500);
+  }
 }
 
 module.exports = errorHandler;
