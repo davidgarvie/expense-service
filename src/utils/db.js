@@ -6,8 +6,8 @@ const {
   MONGO_HOSTNAME,
   MONGO_PORT,
   MONGO_DB,
-} = require("./config");
-const { logger } = require("./helpers");
+} = require("../config");
+const logger = require("./logger");
 
 const authSource = isProduction ? "user" : "admin";
 
@@ -29,4 +29,4 @@ async function createDBConnection() {
   }
 }
 
-exports.createDBConnection = createDBConnection;
+module.exports = createDBConnection;
