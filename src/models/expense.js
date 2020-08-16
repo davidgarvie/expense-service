@@ -2,14 +2,17 @@ const { model, Schema } = require("mongoose");
 
 const expenseSchema = new Schema({
   amount: {
-    type: String,
+    type: Number,
     required: true,
   },
   date: {
     type: Date,
     required: true,
   },
-  isSettled: Boolean,
+  settlement: {
+    type: Schema.Types.ObjectId,
+    ref: "Settlement",
+  },
 });
 
 const Expense = model("Expense", expenseSchema);
