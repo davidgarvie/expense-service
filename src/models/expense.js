@@ -9,6 +9,7 @@ const expenseSchema = new Schema({
     type: Date,
     required: true,
   },
+  isSettled: Boolean,
 });
 
 const Expense = model("Expense", expenseSchema);
